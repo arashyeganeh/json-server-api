@@ -1,0 +1,4 @@
+*.js              text
+*.json            text
+*.bat             text eol=crlf
+*.md              text diff=markdown
