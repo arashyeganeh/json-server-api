@@ -1,0 +1,51 @@
+:root {
+  --background-color: oklch(0.968 0.007 247.896);
+  --font-color: oklch(0.274 0.006 286.033);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Ubuntu', serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  min-block-size: 100dvh;
+  height: 100%;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  margin-top: 0;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: oklch(0.928 0.006 264.531);
+  padding: 0.3rem;
+  border-radius: 0.25rem;
+  color: oklch(0.37 0.013 285.805);
+  outline: none;
+  transition-duration: 200ms;
+  margin-top: 2.5rem;
+
+  svg {
+    width: 1.25rem;
+    stroke: oklch(0.496 0.265 301.924);
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: oklch(0.872 0.01 258.338);
+  }
+}
