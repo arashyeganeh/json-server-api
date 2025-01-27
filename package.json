@@ -1,0 +1,32 @@
+{
+  "private": false,
+  "name": "json-serve-api",
+  "version": "0.1.0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arashyeganeh/json-serve-api/issues"
+  },
+  "author": {
+    "name": "Arash Yeganeh",
+    "url": "https://github.com/arashyeganeh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arashyeganeh/json-serve-api.git"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "serve": "set PORT=80 && node index.js",
+    "prettier": "prettier . --write"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prettier": "3.4.2"
+  },
+  "dependencies": {
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "polka": "^0.5.2",
+    "serve-static": "^1.16.2"
+  }
+}
