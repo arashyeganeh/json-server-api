@@ -15,8 +15,8 @@
     "url": "https://github.com/arashyeganeh/json-serve-api.git"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "serve": "set PORT=80 && node index.js",
+    "dev": "nodemon app.js",
+    "serve": "set PORT=80 && node app.js",
     "prettier": "prettier . --write"
   },
   "devDependencies": {
@@ -24,9 +24,15 @@
     "prettier": "3.4.2"
   },
   "dependencies": {
+    "apicache": "^1.6.3",
+    "compression": "^1.7.5",
+    "express": "^4.21.2",
     "pino": "^9.6.0",
-    "pino-pretty": "^13.0.0",
-    "polka": "^0.5.2",
-    "serve-static": "^1.16.2"
+    "pino-pretty": "^13.0.0"
+  },
+  "imports": {
+    "#module/*": "./module/*",
+    "#route/*": "./route/*",
+    "#app.js": "./app.js"
   }
 }
