@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 
-const router = require("express").Router();
+const { getFiles } = require('#module/fs.js');
+const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  res.sendFile(publicDir + '/index.html');
+  res.render('../view/home.ejs', {
+    routes: getFiles(),
+  });
 });
 
 module.exports = router;

@@ -30,11 +30,14 @@ function getFiles(targetDir = apiBaseDir) {
         if (entry.isDirectory()) {
           explore(entryPath);
         } else if (entry.isFile()) {
-          const getParentDir = entry.path.replace(path.resolve('api'), '');
+          const parentDir = entry.path
+            .replace(path.resolve('api'), '')
+            .replace(/\\/g, '/');
+          const name = entry.name.split('.')[0];
+
           fileList.push({
-            name: entry.name.split('.')[0],
             path: entryPath,
-            parentPath: getParentDir
+            url: parentDir + '/' + name,
           });
         }
       }

@@ -1,11 +1,11 @@
 :root {
-  --background-color: oklch(0.968 0.007 247.896);
+  --background-color: oklch(0.97 0.001 106.424);
   --font-color: oklch(0.274 0.006 286.033);
 }
 
 body {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   flex-direction: column;
   font-family: 'Ubuntu', serif;
@@ -23,12 +23,16 @@ h1 {
   margin-top: 0;
 }
 
-h1,
 p {
-  text-align: center;
+  line-height: 25px;
 }
 
-a {
+.container {
+  margin: auto;
+  width: clamp(400px, 100%, 1200px);
+}
+
+.link-github {
   display: inline-block;
   text-decoration: none;
   background-color: oklch(0.928 0.006 264.531);
@@ -37,7 +41,7 @@ a {
   color: oklch(0.37 0.013 285.805);
   outline: none;
   transition-duration: 200ms;
-  margin-top: 2.5rem;
+  align-self: center;
 
   svg {
     width: 1.25rem;
@@ -47,5 +51,25 @@ a {
 
   &:hover {
     background-color: oklch(0.872 0.01 258.338);
+  }
+}
+
+.routes {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  background-color: white;
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.2rem 0;
   }
 }

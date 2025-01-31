@@ -1,10 +1,10 @@
 {
   "private": false,
-  "name": "json-serve-api",
+  "name": "json-server-api",
   "version": "0.1.0",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arashyeganeh/json-serve-api/issues"
+    "url": "https://github.com/arashyeganeh/json-server-api/issues"
   },
   "author": {
     "name": "Arash Yeganeh",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arashyeganeh/json-serve-api.git"
+    "url": "https://github.com/arashyeganeh/json-server-api.git"
   },
   "scripts": {
     "dev": "nodemon app.js",
@@ -35,5 +35,8 @@
     "#module/*": "./module/*",
     "#route/*": "./route/*",
     "#app.js": "./app.js"
+  },
+  "nodemonConfig": {
+    "ext": "js,json,ejs,html,css"
   }
 }

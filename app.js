@@ -28,12 +28,13 @@ function handleHeaders(req, res, next) {
   next();
 }
 
-app.use(cache('5 minutes'));
+// app.use(cache('5 minutes'));
 app.use(express.static(publicDir));
 app.use(express.json());
 app.use(compression())
 app.use(handleLog);
 app.use(handleHeaders);
+app.set('view engine', 'ejs');
 app.use('/', homeRoute);
 app.use('/api/', apiRoute);
 app.use('*', notFoundRoute);

@@ -7,12 +7,9 @@ const { getFiles, getFile } = require('#module/fs.js');
 const apiLists = getFiles();
 
 apiLists.forEach((entry) => {
-  const jsonData = getFile(entry.path);
-  const route = entry.parentPath.replace(/\\/g, '/') + '/' + entry.name;
-
-  router.get(route, (req, res) => {
+  router.get(entry.url, (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(jsonData));
+    res.send(JSON.stringify(getFile(entry.path)));
   });
 });
 
