@@ -6,52 +6,55 @@ A lightweight Node.js application that serves an API from a file-based JSON stru
 * Serves JSON data as an API
 * Folder-based dynamic routing
 * Built-in caching for improved performance
-* Middleware for logging and security headers
+* Middleware for logging
 * Supports static file serving and EJS templating
 
 ## Installation
 
 ```sh
-git clone https://github.com/yourusername/json-serve-api.git
-cd json-serve-api
+git clone https://github.com/arashyeganeh/json-server-api
+cd json-server-api
 npm install
 ```
 
 ###  Usage
 
 ```sh
-npm start
+npm serve
 ```
 
-By default, the server runs on `http://localhost:3001`.
+By default, the server runs on `http://localhost:3000`.
 
 ###  API Structure
 
-Place your JSON files inside the api folder. The folder structure determines the API routes.
+Place your JSON files inside the `api` folder. The folder structure determines the API routes.
 
 For example, given the following structure:
 
 ```sh
 api/
-  users/
-    list.json
-    details.jsonYou can access:
+	posts.json	--> http://localhost/api/posts
+	users.json	--> http://localhost/api/users
+  	users/
+		2.json	--> http://localhost/api/users/2
 ```
 
 You can access:
 
-- GET /api/users/list → Returns list.json
-- GET /api/users/details → Returns details.json
+- GET /api/posts → Returns posts.json
+- GET /api/users → Returns users.json
+- GET /api/users/2 → Returns 2.json
 
 ### Middleware
 
 The application includes:
 
 * Logging: Logs incoming requests
-* Security Headers: Adds basic security headers
 * Compression: Enables Gzip compression
 * Static File Serving: Serves files from the public folder
 ## Configuration
-Set PORT in the environment variables to change the server port.
+By default, the server runs on port `80` and port `3000` in the development stage. To change the port, set the PORT environment variable in `package.json`.
+
 ## License
+
 This project is licensed under the MIT License.

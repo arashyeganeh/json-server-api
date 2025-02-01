@@ -11,7 +11,9 @@ const homeRoute = require('#route/home.js');
 const apiRoute = require('#route/api.js');
 const notFoundRoute = require('#route/notfound.js');
 
-const PORT = parseInt(process.env.PORT, 10) || 3001;
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const PORT = parseInt(process.env.PORT, 10) || 3000;
+
 const publicDir = path.join(__dirname, 'public');
 const app = express();
 let cache = apicache.middleware;
@@ -28,7 +30,7 @@ function handleHeaders(req, res, next) {
   next();
 }
 
-// app.use(cache('5 minutes'));
+IS_PRODUCTION && app.use(cache('5 minutes'));
 app.use(express.static(publicDir));
 app.use(express.json());
 app.use(compression())
