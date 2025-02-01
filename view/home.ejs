@@ -31,6 +31,7 @@
     
     <div class="routes">
         <% if (routes.length) { %>
+            <p style="margin-bottom: 0.5rem;">These files were detected in the api folder:</p>
             <ul>
                 <% routes.forEach(route => { %>
                     <li>
@@ -43,7 +44,7 @@
         <% } else { %>
             <p>
                 ⚠️ No JSON files found<br/>
-                Please ensure your JSON files exist in the "/api" folder, then refresh this page
+                Please ensure your JSON files exist in the "api" folder, then refresh this page
             </p>    
         <% } %>
     </div>
